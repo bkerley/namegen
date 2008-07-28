@@ -25,4 +25,8 @@ module Namegen
   def self.hugename(chunks = 20)
     (1..chunks).map{"#{firstname} #{lastname}"}.join(' ')
   end
+  
+  def self.metalname
+    easyname.tr('aeiouyAEIOUY',"åéîøüöÅÉÎØÜÖ").gsub('n',"n̈")
+  end
 end
