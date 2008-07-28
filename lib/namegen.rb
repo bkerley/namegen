@@ -12,4 +12,17 @@ module Namegen
 		name = firstname + lastname
 		return name + rand(1000000).to_s
 	end
+	
+	def self.easyname
+	  return "#{firstname} #{lastname}"
+  end
+  
+  def self.challengingname
+    difficulties = ["O'", "Mc", "san ", "von "]
+    return "#{firstname} #{firstname} #{difficulties[rand(difficulties.length)]}#{lastname}"
+  end
+  
+  def self.hugename(chunks = 20)
+    (1..chunks).map{"#{firstname} #{lastname}"}.join(' ')
+  end
 end
